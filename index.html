@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="store">
+	<head>
+		<meta charset="utf-8" />
+		<title>Angular JS Teste</title>
+		<link rel="stylesheet" rel="stylesheet" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+		
+	</head>
+	<body ng-controller="StoreController as store">
+		
+		<header>
+			
+			<nav>
+				<ul>
+					<li></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section ng-repeat="product in store.product">
+				<div>
+					<h2>{{product.name}}</h2>
+					<h3>{{product.price | currency}}</h3>
+					<p>{{product.desc}}</p>
+					<button ng-show="product.canPurchase">Add to Cart</button>
+				</div>		
+			</section>
+			<section>
+				<ul class="nav nav-pills" ng-init="tab=1">
+					<li ng-class="active:class===1"><a href="" ng-click="tab = 1">Option 1</a></li>
+					<li ng-class="active:class===2"><a href="" ng-click="tab = 2">Option 2</a></li>
+					<li ng-class="active:class===3"><a href="" ng-click="tab = 3">Option 3</a></li>
+					<li ng-class="active:class===4"><a href="" ng-click="tab = 4">Option 4</a></li>
+				</ul>
+				{{tab}}
+				<div class="panel" ng-show="tab === 1">
+					<h3>Description option 1</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.  Architecto, vitae, accusantium quis nostrum facere corporis est obcaecati magni aspernatur possimus laborum.
+					</p>
+				</div>
+				<div class="panel" ng-show="tab === 2">
+					<h3>Description option 2</h3>
+					<p>
+						Asperiores ullam qui modi doloribus deserunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, corporis, dicta, officiis, commodi provident aperiam consequuntur repellat exercitationem hic quia non molestias vero ad veritatis ea. Quos, aliquam rem repudiandae.
+					</p>
+				</div>
+				<div class="panel" ng-show="tab === 3">
+					<h3>Description option 3</h3>
+					<p>
+						Rerum, corporis, dicta, officiis, commodi provident aperiam consequuntur repellat exercitationem hic quia non molestias vero ad veritatis ea. Quos, aliquam rem repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					</p>
+				</div>
+				<div class="panel" ng-show="tab === 4">
+					<h3>Description option 4</h3>
+					<p>
+						Quos, aliquam rem repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, quam, ipsam, mollitia, voluptas totam magnam similique sunt dignissimos porro nisi distinctio quae accusamus harum placeat expedita consequuntur aliquid ipsa inventore.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<aside>
+				<ul>
+					<li></li>
+				</ul>
+			</aside>
+			<address></address>
+		</footer>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		</body>
+</html>
